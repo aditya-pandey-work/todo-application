@@ -24,16 +24,8 @@ jobs:
         with:
           context: .
           push: true
-          tags: ${{ secrets.DOCKER_USERNAME }}/todo-app:latest
-
-      - name: Deploy on Server
-        uses: appleboy/ssh-action@v1
-        with:
-          host: ${{ secrets.SERVER_HOST }}
-          username: ${{ secrets.SERVER_USER }}
-          key: ${{ secrets.SERVER_SSH_KEY }}
-          script: |
-            docker pull ${{ secrets.DOCKER_USERNAME }}/todo-app:latest
-            cd todo-app
-            docker compose down
-            docker compose up -d
+          tags: |
+            ${{ secrets.DOCKER_USERNAME }}/todo-app:latest
+            ${{ secrets.DOCKER_USERNAME }}/todo-app:${{ github.sha }}
+          cache-from: type=gha
+          cache-to: type=gha,mode=max
