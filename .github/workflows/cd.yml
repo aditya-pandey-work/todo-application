@@ -27,5 +27,5 @@ jobs:
           tags: |
             ${{ secrets.DOCKER_USERNAME }}/todo-app:latest
             ${{ secrets.DOCKER_USERNAME }}/todo-app:${{ github.sha }}
-          cache-from: type=gha
-          cache-to: type=gha,mode=max
+          cache-from: ""
+          cache-to: ""
