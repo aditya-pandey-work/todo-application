@@ -7,7 +7,7 @@ from models import User
 from auth import hash_password, verify_password, create_access_token
 import todo
 
-Base.metadata.create_all(bind=engine)
+# Base.metadata.create_all(bind=engine)
 
 app = FastAPI()
 
