@@ -7,7 +7,7 @@ class User(Base):
     id = Column(Integer, primary_key= True, index= True)
     name = Column(String, nullable= False)
     email = Column(String, nullable= False)
-    age = Column(Integer, nullable=False)
+    age = Column(Integer, nullable=True)
     hashed_password = Column(String)
 
 class Todo(Base):
