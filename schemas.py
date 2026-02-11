@@ -15,7 +15,7 @@ class UserResponse(BaseModel):
     email: str
 
     class Config:
-        orm_mode = True
+        from_attributes = True
 
 class TodoCreate(BaseModel):
     title: str
@@ -26,4 +26,4 @@ class TodoResponse(BaseModel):
     completed: bool
 
     class Config:
-        orm_mode = True
+        from_attributes = True
