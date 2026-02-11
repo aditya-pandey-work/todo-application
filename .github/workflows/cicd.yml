@@ -3,6 +3,7 @@ on:
     branches:
       - main
   pull_request:
+    branches:
       - main
   
 jobs:
@@ -50,5 +51,3 @@ jobs:
         tags: |
           ${{ secrets.DOCKER_USERNAME }}/todo-app:latest
           ${{ secrets.DOCKER_USERNAME }}/todo-app:${{ github.sha }}
-        cache-from: ""
-        cache-to: ""
